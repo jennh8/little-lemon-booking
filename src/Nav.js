@@ -4,7 +4,7 @@ export default function Nav() {
 return(
     <>
         <nav className='nav'>
-            <ul className="nav-list">
+            <ul className="nav-ul">
                 <li>
                     Home
                 </li>

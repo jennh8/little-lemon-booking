@@ -14,11 +14,28 @@
   flex: 1; 
 }
 
-.nav-list {
+.nav-ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   margin: 0;
   padding-left: 10rem;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
