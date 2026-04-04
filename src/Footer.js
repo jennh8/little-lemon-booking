@@ -5,7 +5,7 @@ return(
     <div className='footer'>
         <img alt='logo' src={Logo}></img>
         <div className='footer-list'>
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul className='footer-ul'>
                 <li>Home</li>
                 <li>About</li>
@@ -16,7 +16,7 @@ return(
             </ul>
         </div>
         <div className='footer-list'>
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <ul className='footer-ul'>
                 <li>Address</li>
                 <li>Phone Number</li>
@@ -24,7 +24,7 @@ return(
             </ul>
         </div>
         <div className='footer-list'>
-            <h4>Social Media Links</h4>
+            <h3>Social Media Links</h3>
             <ul className='footer-ul'>
                 <li>Instagram</li>
                 <li>Facebook</li>
