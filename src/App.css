@@ -41,6 +41,10 @@
   gap: 2rem;
 }
 
+.cta h1 {
+  color: #F4CE14;
+}
+
 .cta-text {
   width: 30rem;
 }
@@ -51,11 +55,12 @@
   margin-bottom: 5rem;
 }
 
-.cta-btn {
+button {
   background: #F4CE14;
   color: #000000;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 16pt;
+  border: none;
 }
 
 .food {
@@ -65,6 +70,64 @@
   bottom: -40px;
   right: 25rem;
   max-width: 100%;
+}
+
+.spec {
+  margin: 0 auto;
+  padding: 1rem 25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.spec-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.cards {
+display: flex;
+justify-content: space-between;
+gap: 3rem;
+}
+
+.article {
+background: #EDEFEE;
+flex: 1;
+display: flex;
+flex-direction: column;
+border-top-left-radius: 16pt;
+border-top-right-radius: 16pt;
+}
+
+.dish {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+article button {
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .footer {
@@ -86,7 +149,6 @@
 h1 {
   font-size: 53px;
   margin: 0;
-  color: #F4CE14;
 }
 
 h2 {
