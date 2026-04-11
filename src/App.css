@@ -149,9 +149,52 @@ article button {
   font-weight: bold;
 }
 
+.testimonials {
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 8rem 30rem;
+  background-color: #495E57;
+  color: #EDEFEE;
+  text-align: center;
+}
+
+.test-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.test-cards article {
+  background-color: #EDEFEE;
+  color: #000000;
+  padding: 0 2rem;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14pt;
+  color: #495E57;
+}
+
+.user img {
+  border-radius: 50pt;
+  height: 3rem;
+  width: 3rem;
+}
+
+.chicago {
+  margin: 0 auto;
+  padding: 2rem 30rem;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+  padding: 2rem 30rem;
+  background-color: #EDEFEE;
 }
 
 .footer-list {
