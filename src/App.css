@@ -1,9 +1,3 @@
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20rem;
-} */
-
 .header {
   margin: 0 auto;
   padding: 1rem 25rem;
@@ -23,7 +17,8 @@
   margin: 0;
   padding-left: 10rem;
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 16pt;
+  font-family: 'Karla';
 }
 
 .cta {
@@ -61,6 +56,11 @@ button {
   padding: 1rem 2rem;
   border-radius: 16pt;
   border: none;
+}
+
+button span {
+  font-size: 15pt;
+  font-family: 'KarlaBold';
 }
 
 .food {
@@ -149,28 +149,53 @@ article button {
 h1 {
   font-size: 53px;
   margin: 0;
+  font-family: 'Markazi';
 }
 
 h2 {
   font-size: 27pt;
   margin: 0;
+  font-family: 'Markazi';
 }
 
 h3 {
   font-size: 24px;
   font-weight: bold;
+  font-family: 'Karla';
 }
 
 span {
   font-size: 18pt;
   font-weight: 700;
+  font-family: 'Karla';
 }
 
 p {
   font-size: 16pt;
+  font-family: 'Karla';
 }
 
 img {
   border-radius: 16pt;
 }
 
+@font-face {
+  font-family: 'Markazi';
+  src: url('./assets/MarkaziText-Roman-VF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/Karla-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KarlaBold';
+  src: url('./assets/Karla-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
