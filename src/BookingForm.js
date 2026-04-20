@@ -39,53 +39,56 @@ function BookingForm({ availableTimes, dispatch }) {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-    >
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        value={formData.date}
-        onChange={handleChange}
-      />
-
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={formData.time}
-        onChange={handleChange}
+    <>
+      <h1>Book Now</h1>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
       >
-        {(availableTimes || []).map((time) => (
-            <option key={time} value={time}>
-                {time}
-            </option>
-        ))}
-      </select>
+        <label htmlFor="res-date">Choose date</label>
+        <input
+          type="date"
+          id="res-date"
+          value={formData.date}
+          onChange={handleChange}
+        />
 
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        id="guests"
-        value={formData.guests}
-        min="1"
-        max="10"
-        onChange={handleChange}
-      />
+        <label htmlFor="res-time">Choose time</label>
+        <select
+          id="res-time"
+          value={formData.time}
+          onChange={handleChange}
+        >
+          {(availableTimes || []).map((time) => (
+              <option key={time} value={time}>
+                  {time}
+              </option>
+          ))}
+        </select>
 
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        value={formData.occasion}
-        onChange={handleChange}
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
+        <label htmlFor="guests">Number of guests</label>
+        <input
+          type="number"
+          id="guests"
+          value={formData.guests}
+          min="1"
+          max="10"
+          onChange={handleChange}
+        />
 
-      <input type="submit" value="Make Your reservation" />
-    </form>
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          value={formData.occasion}
+          onChange={handleChange}
+        >
+          <option>Birthday</option>
+          <option>Anniversary</option>
+        </select>
+
+        <input type="submit" value="Make Your reservation" />
+      </form>
+    </>
   );
 }
 
