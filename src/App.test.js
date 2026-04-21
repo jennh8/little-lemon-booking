@@ -3,6 +3,7 @@ import BookingForm from './BookingForm';
 import { initializeTimes, updateTimes } from "./Times";
 import { fetchAPI } from "./api";
 import userEvent from '@testing-library/user-event';
+import { validateForm } from './validateForm';
 
 jest.mock("./api", () => ({
   fetchAPI: jest.fn(),
@@ -104,4 +105,26 @@ test("form submits correct data", async () => {
   await user.click(screen.getByRole("button"));
 
   expect(mockSubmit).toHaveBeenCalled();
+});
+
+test("returns true for valid form data", () => {
+  const validData = {
+    date: "2026-04-21",
+    time: "17:00",
+    guests: 2,
+    occasion: "Birthday",
+  };
+
+  expect(validateForm(validData)).toBe(true);
+});
+
+test("returns false when date is missing", () => {
+  const invalidData = {
+    date: "",
+    time: "17:00",
+    guests: 2,
+    occasion: "Birthday",
+  };
+
+  expect(validateForm(invalidData)).toBe(false);
 });
