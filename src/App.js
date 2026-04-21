@@ -1,11 +1,13 @@
 import './App.css';
 import { useReducer } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import Booking from './Booking';
 import { initializeTimes, updateTimes } from "./Times";
+import ConfirmedBooking from './ConfirmedBooking'
+import { submitAPI } from "./api";
 
 function App() {
   const [availableTimes, dispatch] = useReducer(
@@ -13,6 +15,16 @@ function App() {
     [],
     initializeTimes
   );
+
+  const navigate = useNavigate();
+
+  const submitForm = (formData) => {
+    const success = submitAPI(formData);
+
+    if (success) {
+      navigate("/confirmed");
+    }
+  };
 
   return (
     <>
@@ -23,7 +35,11 @@ function App() {
         <Route path="/booking" element={
           <Booking
             availableTimes={availableTimes}
-            dispatch={dispatch} />} />
+            dispatch={dispatch}
+            submitForm={submitForm}
+            />} />
+
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
 
       <Footer/>

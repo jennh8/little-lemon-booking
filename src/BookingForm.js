@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [formData, setFormData] = useState({
     date: "",
     time: availableTimes?.[0] || "",
@@ -34,9 +34,11 @@ function BookingForm({ availableTimes, dispatch }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Reservation submitted:", formData);
-  };
+  e.preventDefault();
+  submitForm(formData);
+};
+
+console.log("submitForm:", submitForm);
 
   return (
     <>
@@ -86,7 +88,9 @@ function BookingForm({ availableTimes, dispatch }) {
           <option>Anniversary</option>
         </select>
 
-        <input type="submit" value="Make Your reservation" />
+        <button type="submit">
+          Make Your reservation
+        </button>
       </form>
     </>
   );
