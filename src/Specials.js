@@ -4,7 +4,7 @@ import Greek from './assets/greek-salad.jpg'
 
 export default function Specials() {
 return(
-    <div className="spec">
+    <div className="container">
         <div className="spec-heading">
             <h1>This week's specials!</h1>
             <button>

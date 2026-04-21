@@ -9,7 +9,7 @@ jest.mock("./api", () => ({
 
 test('Renders the BookingForm heading', () => {
     render(<BookingForm availableTimes={["17:00"]} dispatch={() => {}}/>);
-    const headingElement = screen.getByText("Book Now");
+    const headingElement = screen.getByText("Reserve a Table");
     expect(headingElement).toBeInTheDocument();
 })
 

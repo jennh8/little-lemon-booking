@@ -3,9 +3,9 @@ import { useState } from "react";
 function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [formData, setFormData] = useState({
     date: "",
-    time: availableTimes?.[0] || "",
+    time: "",
     guests: 1,
-    occasion: "Birthday",
+    occasion: "",
   });
 
   const handleChange = (e) => {
@@ -38,33 +38,42 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   submitForm(formData);
 };
 
-console.log("submitForm:", submitForm);
+  const isFormValid =
+    formData.date &&
+    formData.time &&
+    formData.guests &&
+    formData.occasion;
 
   return (
-    <>
-      <h1>Book Now</h1>
+    <div className="form-wrapper">
+      <h1 className="form-heading">Reserve a Table</h1>
       <form
         onSubmit={handleSubmit}
-        style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
       >
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"
           id="res-date"
+          name="date"
           value={formData.date}
           onChange={handleChange}
+          required
+          min={new Date().toISOString().split("T")[0]}
         />
 
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time"
+          name="time"
           value={formData.time}
           onChange={handleChange}
+          required
         >
+          <option value="">Select a time</option>
           {(availableTimes || []).map((time) => (
-              <option key={time} value={time}>
-                  {time}
-              </option>
+            <option key={time} value={time}>
+              {time}
+            </option>
           ))}
         </select>
 
@@ -72,27 +81,35 @@ console.log("submitForm:", submitForm);
         <input
           type="number"
           id="guests"
+          name="guests"
           value={formData.guests}
           min="1"
           max="10"
           onChange={handleChange}
+          required
         />
 
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
+          name="occasion"
           value={formData.occasion}
           onChange={handleChange}
+          required
         >
+          <option value="">Select an occasion</option>
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
 
-        <button type="submit">
-          Make Your reservation
+        <button type="submit" disabled={!isFormValid} style={{
+          opacity: !isFormValid ? 0.5 : 1,
+          cursor: !isFormValid ? "not-allowed" : "pointer",
+        }}>
+          <span>Make Your reservation</span>
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

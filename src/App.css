@@ -1,8 +1,26 @@
-.header {
+.section {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 30rem;
+  padding: 5rem 2rem;
+}
+
+.bg-green {
+  background-color: #495E57;
+}
+
+.bg-gray {
+  background-color: #EDEFEE;
+}
+
+.header {
   display: flex;
   align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .nav {
@@ -31,10 +49,7 @@ a:hover {
 }
 
 .cta {
-  background: #495E57;
   color: #ffff;
-  margin: 0 auto;
-  padding: 3rem 30rem 2rem 30rem;
   position: relative;
 }
 
@@ -82,13 +97,7 @@ button:hover {
   width: 20rem;
   position: absolute;
   bottom: -40px;
-  right: 30rem;
-  max-width: 100%;
-}
-
-.spec {
-  margin: 0 auto;
-  padding: 5rem 30rem;
+  right: 0;
 }
 
 .spec-heading {
@@ -163,11 +172,10 @@ article button {
 
 .testimonials {
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 8rem 30rem;
-  background-color: #495E57;
   color: #EDEFEE;
   text-align: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .test-cards {
@@ -197,8 +205,6 @@ article button {
 }
 
 .chicago {
-  margin: 0 auto;
-  padding: 5rem 30rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -217,9 +223,6 @@ article button {
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 5rem 30rem;
-  background-color: #EDEFEE;
   margin-top: auto;
 }
 
@@ -243,80 +246,91 @@ article button {
   position: relative;
 }
 
-.booking h1 {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  color: #495E57;
-}
 
-.booking h2 {
-  color: #495E57;
-  margin: 3rem 0;
-}
-
-.date {
-  display: flex;
-  justify-content: space-between;
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  position: relative;
 }
 
 .booking-content {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: #EDEFEE;
   padding: 2rem 1rem;
   text-align: center;
   position: relative;
   z-index: 2;
-  background-color: #EDEFEE;
+  margin-bottom: -5rem;
 }
 
-.booking-form {
-  background-color:#EDEFEE;
-  padding: 2rem 10rem;
-  padding-bottom: 3rem;
+.img-wrapper {
+  width: 100%;
+  max-width: 800px;
 }
 
-.booking form {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  margin-bottom: 3rem;
+.booking-img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
 }
 
-.form-row {
+.form-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-wrapper h1 {
+  margin-top: 0;
+}
+
+.form-heading {
+  color: #495E57;
+  padding-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+form input,
+form select {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #ffffff;
+  font-family: 'Karla';
+}
+
+form button {
+  margin-top: 2rem;
   margin-bottom: 1rem;
-  text-align: left;
 }
 
 label {
   font-family: 'Karla';
-  margin-bottom: 0.2rem;
+  margin-bottom: -0.5rem;
   font-size: 14pt;
+  font-weight: 600;
 }
 
-.booking p {
-  font-family: 'Karla';
-  font-size: 14pt;
-  color: #000000;
-  text-align: left;
-}
 
-.img-wrapper {
-  padding: 0 30rem;
-  padding-bottom: 5rem;
-  margin-top: -17rem;
-}
 
-.img-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.info {
+.confirmation {
+  min-height: 60vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -374,3 +388,15 @@ img {
   font-weight: normal;
   font-style: normal;
 }
+
+@media (max-width: 768px) {
+  .booking-content {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .booking-img {
+    border-radius: 0;
+  }
+}
+

@@ -2,7 +2,7 @@ import About from './assets/Mario-and-Adrian.jpg'
 
 export default function Chicago() {
 return(
-    <div className="chicago">
+    <div className="chicago container">
         <div>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>

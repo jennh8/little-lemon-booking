@@ -30,17 +30,19 @@ function App() {
     <>
       <Header/>
 
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/booking" element={
-          <Booking
-            availableTimes={availableTimes}
-            dispatch={dispatch}
-            submitForm={submitForm}
-            />} />
+      <div className="page-container">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/booking" element={
+            <Booking
+              availableTimes={availableTimes}
+              dispatch={dispatch}
+              submitForm={submitForm}
+              />} />
 
-        <Route path="/confirmed" element={<ConfirmedBooking />} />
-      </Routes>
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
+        </Routes>
+      </div>
 
       <Footer/>
     </>
