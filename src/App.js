@@ -7,21 +7,6 @@ import Footer from './Footer'
 import Booking from './Booking';
 import { initializeTimes, updateTimes } from "./Times";
 
-// export function initializeTimes() {
-//   return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-// }
-
-// // In the real assignment, this usually uses a provided API like fetchAPI(date)
-// function updateTimes(state, action) {
-//   switch (action.type) {
-//     case "UPDATE_TIMES":
-//       // later you'd use action.date to fetch new times
-//       return initializeTimes();
-//     default:
-//       return state;
-//   }
-// }
-
 function App() {
   const [availableTimes, dispatch] = useReducer(
     updateTimes,

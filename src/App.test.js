@@ -1,7 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import BookingForm from './BookingForm';
 import { initializeTimes, updateTimes } from "./Times";
+import { fetchAPI } from "./api";
 
+jest.mock("./api", () => ({
+  fetchAPI: jest.fn(),
+}));
 
 test('Renders the BookingForm heading', () => {
     render(<BookingForm availableTimes={["17:00"]} dispatch={() => {}}/>);
@@ -9,17 +13,12 @@ test('Renders the BookingForm heading', () => {
     expect(headingElement).toBeInTheDocument();
 })
 
-test("initializeTimes returns the correct default times", () => {
+test("initializeTimes returns API times", () => {
+  fetchAPI.mockReturnValue(["17:00", "18:00"]);
+
   const result = initializeTimes();
 
-  expect(result).toEqual([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  expect(result).toEqual(["17:00", "18:00"]);
 });
 
 test("updateTimes returns same state for unknown action", () => {
