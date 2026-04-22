@@ -18,10 +18,10 @@ A React application for booking restaurant reservations where the user can selec
 
 ## Getting Started
 
-git clone https://github.com/your-username/little-lemon.git  
-cd little-lemon  
-npm install  
-npm start  
+git clone https://github.com/jennh8/little-lemon.git
+cd little-lemon
+npm install
+npm start
 
 ## Running Tests
 
